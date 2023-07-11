@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Video Filters</title>
+        <link rel="stylesheet" href="./styles.css">
+        <script type="module" src="VideoContextAPI/videocontext.js"></script>
+    </head>
+
+    <body>
+        <div class="render-container">
+            <div class="canvas-container" id="canvas-container"></div>
+            <div class="inputs">
+                <div class="slider-input">
+                    <label>Sharpness</label>
+                    <input type="range" step="0.05" min="0" max="3" value="1" class="slider" id="sharpness">
+                </div>
+                <div class="slider-input">
+                    <label>Brightness</label>
+                    <input type="range" step="0.025" min="1" max="3" value="1" class="slider" id="brightness">
+                </div>
+                <div class="chroma-input">
+                    <label>Chroma Color</label>
+                    <input type="color" value="#00b140" class="color-input" id="chroma-clr">
+                    </br>
+                    <div class="slider-input">
+                        <label>Inner Range</label>
+                        <input type="range" step="0.01" min="0" max="1" value="0.1" class="slider" id="tol-a">
+                    </div>
+                    <div class="slider-input">
+                        <label>Outer Range</label>
+                        <input type="range" step="0.01" min="0" max="1" value="0.2" class="slider" id="tol-b">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shader-select-container">
+            <div onchange="allShadersSelectionChanged()" class="all-shaders-container">
+                <select name="all-shaders" id="all-shaders" multiple>
+                </select>
+            </div>
+            <div class="button_container">
+                <button id="add-button" disabled onclick="addButtonOncClick()">Add</button>
+                <button id="remove-button" disabled onclick="removeButtonOncClick()">Remove</button>
+                <button id="up-button" disabled onclick="upButtonOncClick()">Up</button>
+                <button id="down-button" disabled onclick="downButtonOncClick()">Down</button>
+            </div>
+            <div onchange="selectedShadersSelectionChanged()" class="selected-shaders-container">
+                <select name="selected-shaders" id="selected-shaders" multiple>
+                </select>
+            </div>
+        </div>
+        <div class="custom-filter">
+            <div class="text-input">
+                <label>Filter name</label>
+                <input id="filter-name" type="text">
+            </div>
+            <div class="file-input">
+                <label>Vertex shader</label>
+                <input id="vert-selector" type="file" class="file-selector">
+            </div>
+            
+            <div class="file-input">
+                <label>Fragment shader</label>
+                <input id="frag-selector" type="file" class="file-selector">
+            </div>
+            <button id="add-filter-btn">Add Filter</button>
+        </div>
+        
+    </body>
+    <script src="./user_interaction.js"></script>
+    <!-- <script type="module" src="./measuring.js"></script> -->
+    <script type="module" src="./filters.js"></script>
+    <!-- <script src="./filters_imgapi.js"></script> -->
+</html>

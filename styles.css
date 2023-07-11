@@ -1,0 +1,99 @@
+main {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+}
+
+video {
+    max-width: fit-content;
+}
+
+.render-container {
+    display: flex;
+}
+
+.canvas-container canvas {
+    background-color: white;
+}
+
+.inputs {
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.slider-input {
+    margin: 2px;
+    border: 1px;
+    border-color: black;
+    border-style:solid;
+}
+
+.slider-input * {
+    margin: 3px;
+    vertical-align: middle;
+}
+
+.chroma-input {
+    border: 1px;
+    border-color: black;
+    border-style:solid;
+    margin: 2px;
+}
+
+.chroma-input .slider-input {
+    border: 0px;
+    border-style: hidden;
+}
+
+.chroma-input * {
+    margin: 2px;
+    vertical-align: middle;
+}
+
+.chroma-input *  {
+    margin: 3px;
+}
+
+select[multiple] {
+    height: 100px;
+    width: 150px;
+}
+
+.shader-select-container {
+    margin-top: 5px;
+    display: flex;
+}
+
+.button_container button {
+    display:block;
+    width: 60px;
+    margin: 3px 6px 3px 6px;
+}
+
+.custom-filter {
+    border: 1px;
+    border-color: black;
+    border-style:solid;
+    width: fit-content;
+    margin: 1px;
+    padding: 2px;
+}
+
+.custom-filter * {
+    margin: 1px;
+    display: flex;
+}
+
+.custom-filter button {
+    margin: 2px;
+}
+
+.file-input label {
+    margin-right: 8px;
+}
+
+.text-input label {
+    margin-right: 8px;
+}
